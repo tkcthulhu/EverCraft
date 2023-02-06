@@ -74,6 +74,11 @@ public class BaseCharacter
     {
         this.HitPoints = this.HitPoints - hit;
 
+        if (this.HitPoints < 0)
+        {
+            this.HitPoints = 0;
+        }
+
         return this.HitPoints;
     }
 

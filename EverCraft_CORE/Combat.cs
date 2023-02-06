@@ -36,6 +36,16 @@ namespace EverCraft_CORE
 				return false;
 			}
 		}
+
+		public string CharacterStatus()
+		{
+			if (Defender.HitPoints <= 0)
+			{
+				return $"{Defender.Name} has perished!";
+			}
+
+			return "Next players turn!";
+		}
 		
 	}
 }
