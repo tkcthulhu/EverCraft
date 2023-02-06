@@ -119,7 +119,27 @@ public class BaseCharacterTests
     [TestMethod]
     public void CheckModifier_LevelReturnsAppropriateModifier_ReturnsEqualInt()
     {
+        //Testing for positive modifier
+
         int stat = 15;
+
+        double expected = (stat - 10) / 2;
+
+        expected = Math.Floor(expected);
+
+        BaseCharacter Test = new BaseCharacter("Test", Dexterity: stat);
+
+        int result = Test.Modifier(Test.Dexterity);
+
+        Assert.AreEqual(result, expected);
+    }
+
+    [TestMethod]
+    public void CheckModifier_LevelReturnsAppropriateModifier2_ReturnsEqualInt()
+    {
+        //Testing for negative modifier
+
+        int stat = 5;
 
         double expected = (stat - 10) / 2;
 
