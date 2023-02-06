@@ -32,6 +32,9 @@ public class BaseCharacter
     public int HitPoints
     { get; private set; }
 
+    public bool Alive
+    { get; private set; }
+
     public BaseCharacter
         (
         string Name,
@@ -56,6 +59,7 @@ public class BaseCharacter
         this.Wisdom = Wisdom;
         this.Charisma = Charisma;
         this.HitPoints = HitPoints;
+        this.Alive = true;
     }
 
     public int Modifier(int stat)
@@ -74,9 +78,10 @@ public class BaseCharacter
     {
         this.HitPoints = this.HitPoints - hit;
 
-        if (this.HitPoints < 0)
+        if (this.HitPoints <= 0)
         {
             this.HitPoints = 0;
+            this.Alive = false;
         }
 
         return this.HitPoints;

@@ -3,7 +3,7 @@
 namespace EverCraft_UnitTests
 {
     [TestClass]
-    public class CombatTests
+    public class BasicCombatTests
     {
         [TestMethod]
         public void Attack_CharacterCanBeAttacked_ReturnsTrue()
@@ -117,6 +117,28 @@ namespace EverCraft_UnitTests
             string expected = $"{defender.Name} has perished!";
 
             Assert.AreEqual(expected, result);
+
+        }
+
+        [TestMethod]
+        public void CharacterStatus_CharacterCanDie_ReturnsFalse()
+        {
+            //Testing a character can die, attacker has a +4 Strength modifier for a total of 5 damage, which should bring the defenders HP to 0
+            //Character property "Alive" should return false
+
+            BaseCharacter attacker = new BaseCharacter("Test1", Strength: 18);
+
+            BaseCharacter defender = new BaseCharacter("Test2");
+
+            int roll = 11;
+
+            Combat TestFight = new Combat(attacker, defender);
+
+            TestFight.Attack(roll);
+
+            bool result = defender.Alive;
+
+            Assert.IsFalse(result);
 
         }
     }
