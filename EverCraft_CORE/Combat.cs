@@ -18,11 +18,11 @@ namespace EverCraft_CORE
 
 		public bool Attack(int roll)
 		{
-			int attackerMod = Attacker.Dexterity;
+			int attackerMod = Attacker.Modifier(Attacker.Strength);
 
-			int defenderMod = Defender.Dexterity;
+			int defenderMod = Defender.Modifier(Defender.Dexterity);
 
-			int damage = 1;
+			int damage = 1 + attackerMod;
 
 			if (roll == 20)
 			{
