@@ -27,9 +27,11 @@ namespace EverCraft_CORE
 			if (roll == 20)
 			{
 				Defender.TakeDamage(damage * 2);
+				Attacker.GainXP();
 				return true;
 			} else if ((attackerMod + roll) > (Defender.ArmorClass + defenderMod)) {
 				Defender.TakeDamage(damage);
+				Attacker.GainXP();
 				return true;
 			} else
 			{

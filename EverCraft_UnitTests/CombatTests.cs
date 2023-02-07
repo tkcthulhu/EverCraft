@@ -141,6 +141,40 @@ namespace EverCraft_UnitTests
             Assert.IsFalse(result);
 
         }
+
+        [TestMethod]
+        public void GainXP_CharacterCanGainXP_ReturnsEqualInt()
+        {
+            //Testing XP increments properly
+
+            BaseCharacter attacker = new BaseCharacter("Test1");
+
+            BaseCharacter defender = new BaseCharacter("Test2");
+
+            int roll = 11;
+
+            Combat TestFight = new Combat(attacker, defender);
+
+            TestFight.Attack(roll);
+
+            Assert.AreEqual(10, attacker.XP);
+        }
+
+        [TestMethod]
+        public void GainXP_CharacterCanLevelUp_ReturnsEqualInt()
+        {
+            BaseCharacter attacker = new BaseCharacter("Test1", XP : 990);
+
+            BaseCharacter defender = new BaseCharacter("Test2");
+
+            int roll = 11;
+
+            Combat TestFight = new Combat(attacker, defender);
+
+            TestFight.Attack(roll);
+
+            Assert.AreEqual(2, attacker.Level);
+        }
     }
 }
 

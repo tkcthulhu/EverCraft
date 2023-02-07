@@ -35,6 +35,9 @@ public class BaseCharacter
     public bool Alive
     { get; private set; }
 
+    public int XP
+    { get; private set; }
+
     public BaseCharacter
         (
         string Name,
@@ -46,7 +49,8 @@ public class BaseCharacter
         int Intelligence = 10,
         int Wisdom = 10,
         int Charisma = 10,
-        int HitPoints = 5
+        int HitPoints = 5,
+        int XP = 0
         )
     {
         this.Name = Name;
@@ -60,6 +64,7 @@ public class BaseCharacter
         this.Charisma = Charisma;
         this.HitPoints = HitPoints;
         this.Alive = true;
+        this.XP = XP;
     }
 
     public int Modifier(int stat)
@@ -85,6 +90,17 @@ public class BaseCharacter
         }
 
         return this.HitPoints;
+    }
+
+    public int GainXP()
+    {
+        this.XP += 10;
+
+        double newLevel = this.XP / 1000;
+
+        this.Level = (int)Math.Floor(newLevel + 1);
+
+        return this.Level;
     }
 
 }
