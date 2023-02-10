@@ -163,6 +163,8 @@ namespace EverCraft_UnitTests
         [TestMethod]
         public void GainXP_CharacterCanLevelUp_ReturnsEqualInt()
         {
+            //Testing Level increases with XP at appropriate intervals
+
             BaseCharacter attacker = new BaseCharacter("Test1", XP : 990);
 
             BaseCharacter defender = new BaseCharacter("Test2");

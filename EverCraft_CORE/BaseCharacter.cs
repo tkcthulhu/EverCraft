@@ -3,44 +3,44 @@
 public class BaseCharacter
 {
     public string Name
-    { get; private set; }
+    { get; protected set; }
 
     public int Level
-    { get; private set; }
+    { get; protected set; }
 
     public int ArmorClass
-    { get; private set; }
+    { get; protected set; }
 
     public int Strength
-    { get; private set; }
+    { get; protected set; }
 
     public int Dexterity
-    { get; private set; }
+    { get; protected set; }
 
     public int Constitution
-    { get; private set; }
+    { get; protected set; }
 
     public int Intelligence
-    { get; private set; }
+    { get; protected set; }
 
     public int Wisdom
-    { get; private set; }
+    { get; protected set; }
 
     public int Charisma
-    { get; private set; }
+    { get; protected set; }
 
     public int HitPoints
-    { get; private set; }
+    { get; protected set; }
 
     public bool Alive
-    { get; private set; }
+    { get; protected set; }
 
     public int XP
-    { get; private set; }
+    { get; protected set; }
 
     public BaseCharacter
         (
-        string Name,
+        string Name = "Unknown Adventurer",
         int Level = 1,
         int ArmorClass = 10,
         int Strength = 10,
