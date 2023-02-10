@@ -3,7 +3,7 @@ namespace EverCraft_CORE
 {
 	public class Barbarian : BaseCharacter
 	{
-		public Barbarian() : base()
+		public Barbarian(string Name) : base(Name: Name)
 			{
 				this.Strength = this.Strength + 2;
 				this.Constitution = this.Constitution + 2;

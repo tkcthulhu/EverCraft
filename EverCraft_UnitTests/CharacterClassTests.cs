@@ -9,7 +9,7 @@ namespace EverCraft_UnitTests
 		[TestMethod]
 		public void Classes_BarabarianStatsAreACcurate_ReturnsEqualInt()
 		{
-			Barbarian Test = new Barbarian();
+			Barbarian Test = new Barbarian("Test");
 
 			int result = Test.Strength;
 
