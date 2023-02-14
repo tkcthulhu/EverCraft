@@ -29,6 +29,18 @@ namespace EverCraft_UnitTests
 
             Assert.AreEqual(expected, result);
         }
-	}
+
+        [TestMethod]
+        public void Classes_BarbarianStatsAreAccurate3_ReturnsEqualInt()
+        {
+            Barbarian Test = new Barbarian("Test");
+
+            int result = Test.HitPoints;
+
+            int expected = 6;
+
+            Assert.AreEqual(expected, result);
+        }
+    }
 }
 

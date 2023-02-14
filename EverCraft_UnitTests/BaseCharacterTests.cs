@@ -157,7 +157,7 @@ public class BaseCharacterTests
     {
         int Default = 5;
 
-        BaseCharacter Test = new BaseCharacter("Test", HitPoints: Default);
+        BaseCharacter Test = new BaseCharacter("Test", BaseHitPoints: Default);
 
         int result = Test.HitPoints;
 

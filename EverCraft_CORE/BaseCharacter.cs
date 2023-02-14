@@ -29,6 +29,12 @@ public class BaseCharacter
     public int Charisma
     { get; protected set; }
 
+    public int MaxHitPoints
+    { get; protected set; }
+
+    public int BaseHitPoints
+    { get; protected set; }
+
     public int HitPoints
     { get; protected set; }
 
@@ -64,7 +70,7 @@ public class BaseCharacter
         int Intelligence = 10,
         int Wisdom = 10,
         int Charisma = 10,
-        int HitPoints = 5,
+        int BaseHitPoints = 5,
         int XP = 0
         )
     {
@@ -77,11 +83,12 @@ public class BaseCharacter
         this.Intelligence = Intelligence;
         this.Wisdom = Wisdom;
         this.Charisma = Charisma;
-        this.HitPoints = HitPoints;
+        this.BaseHitPoints = BaseHitPoints;
         this.Alive = true;
         this.XP = XP;
         this.CritMultiplier = 2;
         this.RollModifier = 0;
+        this.HitPoints = this.BaseHitPoints + this.Modifier(Constitution);
         this.DamageModifier = this.Modifier(Strength);
         this.DefenseModifier = this.Modifier(Dexterity);
         this.SpellcastingModifier = this.Modifier(Wisdom);
