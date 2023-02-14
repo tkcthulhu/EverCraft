@@ -38,6 +38,21 @@ public class BaseCharacter
     public int XP
     { get; protected set; }
 
+    public int CritMultiplier
+    { get; protected set; }
+
+    public int RollModifier
+    { get; protected set;  }
+
+    public int DamageModifier
+    { get; protected set; }
+
+    public int DefenseModifier
+    { get; protected set; }
+
+    public int SpellcastingModifier
+    { get; protected set; }
+
     public BaseCharacter
         (
         string Name = "Unknown Adventurer",
@@ -65,6 +80,12 @@ public class BaseCharacter
         this.HitPoints = HitPoints;
         this.Alive = true;
         this.XP = XP;
+        this.CritMultiplier = 2;
+        this.RollModifier = 0;
+        this.DamageModifier = this.Modifier(Strength);
+        this.DefenseModifier = this.Modifier(Dexterity);
+        this.SpellcastingModifier = this.Modifier(Wisdom);
+        
     }
 
     public int Modifier(int stat)

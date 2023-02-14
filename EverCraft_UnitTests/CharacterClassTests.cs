@@ -7,18 +7,28 @@ namespace EverCraft_UnitTests
 	public class CharacterClassTests
 	{
 		[TestMethod]
-		public void Classes_BarabarianStatsAreACcurate_ReturnsEqualInt()
+		public void Classes_BarabarianStatsAreAccurate_ReturnsEqualInt()
 		{
 			Barbarian Test = new Barbarian("Test");
 
 			int result = Test.Strength;
 
-			Console.WriteLine(result);
-
 			int expected = 12;
 
 			Assert.AreEqual(expected, result);
 		}
+
+		[TestMethod]
+		public void Classes_BarbarianStatsAreAccurate2_ReturnsEqualInt()
+		{
+            Barbarian Test = new Barbarian("Test");
+
+            int result = Test.Constitution;
+
+            int expected = 12;
+
+            Assert.AreEqual(expected, result);
+        }
 	}
 }
 

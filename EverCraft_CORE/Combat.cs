@@ -18,15 +18,15 @@ namespace EverCraft_CORE
 
 		public bool Attack(int roll)
 		{
-			int attackerMod = Attacker.Modifier(Attacker.Strength);
+			int attackerMod = Attacker.DamageModifier;
 
-			int defenderMod = Defender.Modifier(Defender.Dexterity);
+			int defenderMod = Defender.DefenseModifier;
 
 			int damage = 1 + attackerMod;
 
 			if (roll == 20)
 			{
-				Defender.TakeDamage(damage * 2);
+				Defender.TakeDamage(damage * Attacker.CritMultiplier);
 				Attacker.GainXP();
 				return true;
 			} else if ((attackerMod + roll) > (Defender.ArmorClass + defenderMod)) {

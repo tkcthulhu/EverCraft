@@ -3,7 +3,7 @@
 namespace EverCraft_UnitTests
 {
     [TestClass]
-    public class BasicCombatTests
+    public class BasicCombatTests1
     {
         [TestMethod]
         public void Attack_CharacterCanBeAttacked_ReturnsTrue()
