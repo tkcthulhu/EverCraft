@@ -38,13 +38,18 @@ namespace EverCraft_CORE
 			this.RageArmorClassDownGrade = 2;
         }
 
-		public void Raging(bool raging)
+		public void Raging()
 		{
-			if(raging)
+			if(this.IsRaging)
 			{
 				this.Strength = this.BaseStrength + this.RageStatBonus;
 				this.Constitution = this.BaseConstitution + this.RageStatBonus;
 				this.ArmorClass = this.BaseArmorClass - this.RageArmorClassDownGrade;
+			} else
+			{
+				this.Strength = this.BaseStrength;
+				this.Constitution = this.BaseConstitution;
+				this.ArmorClass = this.BaseArmorClass;
 			}
 		}
 	}
